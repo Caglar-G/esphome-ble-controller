@@ -122,7 +122,7 @@ CONF_ON_SERVER_DISCONNECTED = "on_disconnected"
 BLEControllerServerDisconnectedTrigger = esp32_ble_controller_ns.class_('BLEControllerServerDisconnectedTrigger', automation.Trigger.template())
 
 # Schema for the controller (incl. validation) #####
-CONFIG_SCHEMA = cv.All(cv.only_on_esp32, cv.only_with_arduino, cv.Schema({
+CONFIG_SCHEMA = cv.All(cv.only_on_esp32, cv.Schema({
     cv.GenerateID(): cv.declare_id(ESP32BLEController),
 
     cv.Optional(CONF_BLE_SERVICES): cv.ensure_list(BLE_SERVICE),
